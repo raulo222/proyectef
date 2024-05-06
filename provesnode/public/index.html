@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/css.css">
+    <script src="js.js"></script>
+</head>
+<div>
+    <form  action='/procesar' method="">
+        <label id="f1" for="formulari1">NOM</label>
+    <input id="input" autocomplete="off" name="formulari1" type="text"  tabindex="1" >
+    <input id="input2" autocomplete="off" name="formulari2" type="text"  tabindex="1" >
+    
+    <button  id="boton" value="Enviar">
+    </form>
+</div>
+<!-- <div id="buscar">
+    <input id="input" autocomplete="off"  type="search"  tabindex="1" placeholder="Bucar dentro de la web">
+    <input id="boton" type="button" value=" Enviar">
+</div> -->
+<body>
+    
+    <!-- <ul id="lallista"> -->
+        <!-- <li class="los">
+            Lolaso
+        </li>
+        <li class="los">
+            Perros
+        </li>
+        <li class="los">
+            Gatos
+        </li> -->
+    <!-- </ul> -->
+    
+    <a id="el1"><h2 id="lolaso"></a>
+        Lolaso
+    </h2>
+    
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit praesentium error eum modi. Id quam mollitia sed nobis natus cumque non voluptate eum voluptatum quibusdam quidem fugit alias, omnis voluptatibus.</p>
+    <a><h2 id="perros"></a>
+        Perros
+    </h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit praesentium error eum modi. Id quam mollitia sed nobis natus cumque non voluptate eum voluptatum quibusdam quidem fugit alias, omnis voluptatibus.</p>
+    <a> <h2 id="gatos"></a>
+        Gatos 
+    </h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit praesentium error eum modi. Id quam mollitia sed nobis natus cumque non voluptate eum voluptatum quibusdam quidem fugit alias, omnis voluptatibus.</p>
+    <a><h2 id="peces"></a>
+        Peces 
+    </h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit praesentium error eum modi. Id quam mollitia sed nobis natus cumque non voluptate eum voluptatum quibusdam quidem fugit alias, omnis voluptatibus.</p>
+    
+    <a><h2 id="lolaso2"></a>
+        Lolaso 2
+    </h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit praesentium error eum modi. Id quam mollitia sed nobis natus cumque non voluptate eum voluptatum quibusdam quidem fugit alias, omnis voluptatibus.</p>
+    <a> <h2 id="perros2"></a>
+        Perros 2
+    </h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit praesentium error eum modi. Id quam mollitia sed nobis natus cumque non voluptate eum voluptatum quibusdam quidem fugit alias, omnis voluptatibus.</p>
+    <a><h2 id="camara"></a>
+        Camara
+    </h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit praesentium error eum modi. Id quam mollitia sed nobis natus cumque non voluptate eum voluptatum quibusdam quidem fugit alias, omnis voluptatibus.</p>
+    <a><h2 id="configuracion"></a>
+        Configuracion
+    </h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit praesentium error eum modi. Id quam mollitia sed nobis natus cumque non voluptate eum voluptatum quibusdam quidem fugit alias, omnis voluptatibus.</p>
+    
+    <script>
+        document.getElementById('boton').addEventListener('click', () => {
+            // Realizar una solicitud HTTP (Ajax) al servidor cuando se haga clic en el botón
+            fetch('/datos')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('La solicitud no pudo ser procesada');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Manejar los datos recibidos y mostrarlos en la página
+                const x = JSON.stringify(data["mensaje"]);
+                console.log(x)
+                document.getElementById("lolaso").innerHTML=x
+                })
+                .catch(error => {
+                    console.error('Error al obtener datos del servidor:', error.message);
+                });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+#buscar{
+    display: flex;
+}
+
+.los{
+   
+    margin-left: -40px;
+    border-collapse: collapse;
+    background-color: rgba(255, 255, 255, 0);
+   
+    color: rgb(0, 0, 0);
+    padding: 5px;
+}
+input,button{
+    padding: 6px;
+    width: 235px;
+    border-radius: 5px;
+    border: 1px solid #000;
+}
+input:focus{
+    border: 1px solid #000;
+    outline: none;
+}
+
+.los:hover,.los:focus{
+    background-color: rgba(170, 170, 170, 0.829);
+}
+h2{
+    font-size: 32px;
+}  
+button{
+    margin-top: 50px;
+    
+    border: 1px solid #000;
+    border-radius: 5px;
+    background-color: aqua;
+    padding-top: 5px;
+    width: 70px;
+    height: 40px;
+    color: black;
+}
+#buscar{
+    
+} 
+#lallista{
+    list-style: none;
+  border: 1px solid #000;
+    width: 187px;
+    border-collapse: collapse;
+    margin-top: -4px;
+    display: none;
+    background-color: rgba(127, 255, 212, 0);
+    border-radius: 0px 0px 5px 5px;
+    
+  
+  
+}            
+#coso{
+    display: flex;
+}
