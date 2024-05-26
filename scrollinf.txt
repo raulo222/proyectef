@@ -1,0 +1,115 @@
+function crearYAgregarArticulo() {
+    i=0
+    while(i<6){
+
+   
+    // Crear el elemento artículo
+    const articulo = document.createElement('article');
+
+    // Crear y añadir el título
+    const titulo = document.createElement('p');
+    titulo.className = 'titul';
+    titulo.textContent = 'Un xico sale vestido de astronauta';
+    articulo.appendChild(titulo);
+
+    // Crear el contenedor de etiquetas
+    const divEtiquetas = document.createElement('div');
+    divEtiquetas.className = 'divestiquetes';
+
+    // Crear y añadir las etiquetas
+    const etiqueta1 = document.createElement('p');
+    etiqueta1.className = 'etiquetas';
+    etiqueta1.textContent = 'Deportes';
+    divEtiquetas.appendChild(etiqueta1);
+
+    const etiqueta2 = document.createElement('p');
+    etiqueta2.className = 'etiquetas';
+    etiqueta2.textContent = 'España';
+    divEtiquetas.appendChild(etiqueta2);
+
+    articulo.appendChild(divEtiquetas);
+
+    // Crear y añadir la descripción
+    const descripcion = document.createElement('p');
+    descripcion.className = 'descipcio';
+    descripcion.textContent = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, itaque necessitatibus! Qui ea nobis beatae labore dolores debitis laboriosam. Officia cupiditate eos veniam laudantium voluptatum nisi at eaque incidunt provident.';
+    articulo.appendChild(descripcion);
+
+    // Crear y añadir el autor
+    const autor = document.createElement('p');
+    autor.className = 'autor';
+    autor.textContent = 'Autor: Raül';
+    articulo.appendChild(autor);
+
+    // Crear y añadir los likes
+    const likes = document.createElement('p');
+    likes.className = 'likes';
+    likes.textContent = 'LIKES:';
+    articulo.appendChild(likes);
+
+    // Añadir el artículo al contenedor principal
+   const  mains=document.getElementsByClassName('seccioprinc')
+    const main  = mains[mains.length-1]
+    
+
+
+
+
+
+    main.appendChild(articulo)
+    i++
+}
+}
+window.addEventListener('scroll', () => {
+    // Calcula la cantidad de scroll actual
+    
+    const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+    const x = document.getElementsByClassName('loading')
+    const meua = x[x.length-1]
+    meua.style.display='block'
+
+    // Verifica si el usuario ha llegado al final de la página
+    if (scrollTop + clientHeight >= scrollHeight - 5 && sepot) {
+        console.log("entra event")     
+        sepot=false
+        setTimeout(() => {
+            setTimeout(() => {
+                const seccion = document.createElement('div');
+                seccion.className = 'main';
+                const mains=document.getElementsByClassName('main') 
+                console.log()
+                const main = mains[mains.length-1];
+                main.insertAdjacentElement('afterend',seccion)
+                const section = document.createElement('section');
+                section.className = 'seccioprinc';
+                const mains2=document.getElementsByClassName('main') 
+                const main1 = mains2[mains.length-1];
+                main1.appendChild(section)
+                crearYAgregarArticulo()
+                donareldiv()
+                meua.style.display='none'
+                sepot=true
+              }, "1000");
+          }, "1000");
+      
+     
+    }
+});
+
+function donareldiv(){
+  const tots = document.getElementsByClassName('seccioprinc')
+  const elquevull = tots[tots.length-1]
+  const loadingDiv = document.createElement('div');
+    loadingDiv.className = 'loading';
+
+    // Crear el elemento img
+    const imgElement = document.createElement('img');
+    imgElement.id = 'carga';
+    imgElement.className = 'laimg';
+    imgElement.src = "/imagenes/1_ngNzwrRBDElDnf2CLF_Rbg.gif";
+
+    // Agregar la imagen al div
+    loadingDiv.appendChild(imgElement);
+    elquevull.appendChild(loadingDiv)
+
+}
